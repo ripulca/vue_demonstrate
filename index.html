@@ -253,7 +253,7 @@
             const regex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
             newemail = newemail.match(regex);     //проверка на совпадение с регуляркой
             if (!newemail) {
-              this.feedback_1="неверный формат email";
+              this.feedback_1="неверный формат email, допускаются только английские буквы";
             //   this.activeColor = "red";
             } else {
               this.feedback_1="";
@@ -265,7 +265,7 @@
             const regex = /^[0-9]{6,10}$/;
             newphone = newphone.match(regex);     //проверка на совпадение с регуляркой
             if (!newphone) {
-              this.feedback_2="неверный формат телефона";
+              this.feedback_2="неверный формат телефона, допускается 6-10 чисел, без служебных символов";
               // this.activeColor2 = "red";
             } else {
               this.feedback_2="";
