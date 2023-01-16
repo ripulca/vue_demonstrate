@@ -35,6 +35,7 @@
             id="FIO"
             v-model="FIO"
           />
+          <p id="feedback_3">{{feedback_3}}</p>
         </div>
         <br />
         <div>
@@ -210,6 +211,7 @@
           end_year: "",
           feedback_1:"",
           feedback_2:"",
+          feedback_3:"",
         },
         watch: {
           education: function (neweducation, oldeducation) {    //обработчик значений образования
@@ -233,9 +235,11 @@
             const regex = /[А-ЯA-Zа-яa-z -]/g;
             newFIO = newFIO.match(regex);     //проверка на совпадение с регуляркой
             if (!newFIO) {
-              this.activeColor1 = "red";
+              this.feedback_3="неверный формат имени, допускаются только русские и английские буквы";
+              // this.activeColor1 = "red";
             } else {
-              this.activeColor1 = "black";
+              this.feedback_3="";
+              // this.activeColor1 = "black";
             }
           },
           // city: function (newcity, oldcity) {   //обработчик города
